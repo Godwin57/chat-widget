@@ -14,11 +14,17 @@ const TextArea: React.FC<TextAreaProps> = ({
     withRightElement,
     label = "",
     withLabel,
+    name,
+    fixedAtBottom,
 }) => {
     return (
-        <div className={`relative flex items-center justify-center`}>
+        <div
+            className={`${
+                fixedAtBottom ? "fixed bottom-0" : "relative"
+            } flex items-center justify-center w-[100%]`}
+        >
             {withLeftElement && (
-                <div className="absolute left-12 flex items-center justify-center cursor-pointer">
+                <div className="absolute inset-y-0 left-12 flex items-center justify-center cursor-pointer">
                     {leftElement}
                 </div>
             )}
@@ -27,9 +33,12 @@ const TextArea: React.FC<TextAreaProps> = ({
                     {rightElement}
                 </div>
             )}
+
             <textarea
                 placeholder={placeholder}
-                className="w-95 px-4 pl-20 py-4 rounded-lg bg-light-400 text-white placeholder-white"
+                name={name}
+                id={name}
+                className={`w-[95%] px-4 pl-24 py-4 rounded-full bg-light-400 text-white placeholder-white ${className}`}
             />
         </div>
     );

@@ -22,4 +22,5 @@ export interface TextAreaProps {
     rightElement?: JSX.Element;
     label?: string;
     withLabel?: boolean;
+    fixedAtBottom?: boolean;
 }

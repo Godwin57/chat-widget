@@ -10,9 +10,15 @@ function App() {
             <TextArea
                 placeholder="Enter your message here"
                 withRightElement
-                rightElement={<BsSendFill className="w-8 h-8" />}
+                rightElement={
+                    <BsSendFill className="w-8 h-8 text-light-700 hover:text-white" />
+                }
                 withLeftElement
-                leftElement={<PiSmileyStickerThin className="w-10 h-10" />}
+                leftElement={
+                    <PiSmileyStickerThin className="w-10 h-10 text-light-700 hover:text-white" />
+                }
+                name="Chat-box"
+                fixedAtBottom
             />
         </div>
     );
