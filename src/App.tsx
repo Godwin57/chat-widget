@@ -11,7 +11,7 @@ function App() {
                 placeholder="Enter your message here"
                 withRightElement
                 rightElement={
-                    <BsSendFill className="w-8 h-8 text-light-700 hover:text-white" />
+                    <BsSendFill className="w-8 h-8 text-green-500 hover:text-green-700" />
                 }
                 withLeftElement
                 leftElement={

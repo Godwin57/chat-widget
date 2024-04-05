@@ -20,16 +20,16 @@ const TextArea: React.FC<TextAreaProps> = ({
     return (
         <div
             className={`${
-                fixedAtBottom ? "fixed bottom-0" : "relative"
+                fixedAtBottom ? "fixed bottom-5" : "relative"
             } flex items-center justify-center w-[100%]`}
         >
             {withLeftElement && (
-                <div className="absolute inset-y-0 left-12 flex items-center justify-center cursor-pointer">
+                <div className="absolute inset-y-0 left-14 flex items-center justify-center cursor-pointer">
                     {leftElement}
                 </div>
             )}
             {withRightElement && (
-                <div className="absolute inset-y-0 flex items-center justify-center right-14 cursor-pointer">
+                <div className="absolute inset-y-0 flex items-center justify-center right-16 cursor-pointer">
                     {rightElement}
                 </div>
             )}
@@ -38,7 +38,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 placeholder={placeholder}
                 name={name}
                 id={name}
-                className={`w-[95%] px-4 pl-24 py-4 rounded-full bg-light-400 text-white placeholder-white ${className}`}
+                className={`w-[95%] focus:border-green-500 px-16 py-4 rounded-full border-2 border-white outline-none bg-dark-400 text-white placeholder-white ${className}`}
             />
         </div>
     );
