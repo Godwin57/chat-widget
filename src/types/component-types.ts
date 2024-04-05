@@ -24,3 +24,9 @@ export interface TextAreaProps {
     withLabel?: boolean;
     fixedAtBottom?: boolean;
 }
+
+export interface MessageCardProps {
+    message?: string;
+    className?: string;
+    sender?: boolean;
+}

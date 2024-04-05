@@ -20,7 +20,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     return (
         <div
             className={`${
-                fixedAtBottom ? "fixed bottom-5" : "relative"
+                fixedAtBottom ? "fixed bottom-2" : "relative"
             } flex items-center justify-center w-[100%]`}
         >
             {withLeftElement && (
@@ -38,7 +38,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 placeholder={placeholder}
                 name={name}
                 id={name}
-                className={`w-[95%] focus:border-green-500 px-16 py-4 rounded-full border-2 border-white outline-none bg-dark-400 text-white placeholder-white ${className}`}
+                className={`w-[95%] focus:border-blue-500 px-16 py-4 rounded-full border-2 border-white outline-none bg-dark-400 text-white placeholder-white ${className}`}
             />
         </div>
     );
