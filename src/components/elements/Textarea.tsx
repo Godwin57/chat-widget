@@ -1,10 +1,11 @@
 import { TextAreaProps } from "../../types/component-types";
 
 const TextArea: React.FC<TextAreaProps> = ({
+    value = "",
     error,
     placeholder,
     type = "text",
-    onChange,
+    valueChange,
     onFocus,
     className = "",
     disabled = false,
@@ -36,9 +37,11 @@ const TextArea: React.FC<TextAreaProps> = ({
 
             <textarea
                 placeholder={placeholder}
+                value={value}
                 name={name}
                 id={name}
-                className={`w-[95%] focus:border-blue-500 px-16 py-4 rounded-full border-2 border-white outline-none bg-dark-400 text-white placeholder-white ${className}`}
+                onChange={valueChange}
+                className={`w-[95%] focus:border-blue-500 pl-24 md:px-16 py-2 rounded-full border-2 border-white outline-none bg-dark-400 text-white placeholder-white ${className}`}
             />
         </div>
     );

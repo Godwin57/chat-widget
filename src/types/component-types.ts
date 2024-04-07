@@ -12,7 +12,7 @@ export interface TextAreaProps {
     name?: string;
     value?: string;
     placeholder?: string;
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    valueChange?: (e: ChangeEvent<HTMLInputElement>) => void;
     onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
     className?: string;
     disabled?: boolean;
@@ -29,4 +29,17 @@ export interface MessageCardProps {
     message?: string;
     className?: string;
     sender?: boolean;
+}
+
+export interface CardViewProps {
+    children?: JSX.Element;
+    className?: string;
+    closeModal?: () => void;
+    open?: boolean;
+    withCloseIcon?: boolean;
+    closeIcon?: JSX.Element;
+    title?: string;
+    closeOnWindowClick?: boolean;
+    modalWidth?: string;
+    positionClass?: string;
 }

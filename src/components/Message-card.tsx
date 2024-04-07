@@ -8,15 +8,11 @@ const MessageCard: FC<MessageCardProps> = ({
 }) => {
     return (
         // This overflows. Remove the overflowing later.
-        <div
-            className={`${
-                sender ? "flex justify-end mr-2" : "ml-2"
-            } min-w-[100%]`}
-        >
+        <div className={`${sender ? "flex justify-end" : ""} w-[100vw]`}>
             <p
                 className={`${
                     sender ? "bg-blue-500" : "bg-light-400"
-                } py-4 px-4 my-2 max-w-[400px] rounded-lg ${className}`}
+                } py-4 px-4 mx-10 my-2 max-w-[400px] rounded-lg ${className}`}
             >
                 {message}
             </p>
