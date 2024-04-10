@@ -12,7 +12,7 @@ export interface TextAreaProps {
     name?: string;
     value?: string;
     placeholder?: string;
-    valueChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    valueChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
     onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
     className?: string;
     disabled?: boolean;

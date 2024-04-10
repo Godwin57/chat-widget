@@ -9,20 +9,21 @@ const Header: React.FC<HeaderType> = ({
     activeStatus = false,
 }) => {
     return (
-        <div className="flex items-center justify-around px-6 py-6">
+        <div className="flex items-center justify-around px-6 py-6 border-b-2 border-b-blue-500">
             <div>Icon</div>
             <div>
-                <p className="font-bold">{title}</p>
-                <p>{description}</p>
+                <p className="text-sm font-bold">{title}</p>
+                <p className="hidden sm:block">{description}</p>
             </div>
-            {activeStatus ? (
-                <p className="flex gap-1">
-                    <RiRadioButtonLine className="w-6 h-6 text-green-600" />
+            {!activeStatus ? (
+                <p className="flex gap-1 items-center">
+                    <RiRadioButtonLine className="w-4 h-4 text-green-600" />
                     Online
                 </p>
             ) : (
-                <p className="flex gap-1">
-                    <IoCloudOffline className="w-6 h-6 text-red-600" /> Offline
+                <p className="flex gap-1 items-center font-bold">
+                    <IoCloudOffline className="w-4 h-4 text-red-600" />{" "}
+                    <span className="text-sm">Offline</span>
                 </p>
             )}
         </div>

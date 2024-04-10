@@ -38,19 +38,21 @@ function App() {
     return (
         <div className="bg-dark-400 text-white min-h-screen">
             <Header />
-            {[1, 2, 3, 4, 5, 6].map((elem, index) => (
-                <MessageCard
-                    key={index}
-                    message="This is the message I want to render in this chat"
-                    sender={elem % 2 === 0}
-                    className="mb-6"
-                />
-            ))}
+            <div className="max-h-[75vh] overflow-y-auto overflow-x-hidden sm:max-h-(80vh)">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((elem, index) => (
+                    <MessageCard
+                        key={index}
+                        message="This is the message I want to render in this chat"
+                        sender={elem % 2 === 0}
+                        className="mb-6"
+                    />
+                ))}
+            </div>
             <div className="">
                 <div
                     className={`${
                         !showEmojis && "hidden"
-                    } absolute ml-10 bottom-20`}
+                    } fixed ml-2 sm:ml-10 bottom-20`}
                     ref={emojiPickerRef}
                 >
                     <EmojiPicker onEmojiSelect={handleEmojiSelect} />
@@ -77,7 +79,7 @@ function App() {
                     fixedAtBottom
                 />
 
-                <p className="font-bold text-xl">{message}</p>
+                {/* <p className="font-bold text-xl">{message}</p> */}
             </div>
         </div>
     );

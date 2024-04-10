@@ -25,12 +25,12 @@ const TextArea: React.FC<TextAreaProps> = ({
             } flex items-center justify-center w-[100%]`}
         >
             {withLeftElement && (
-                <div className="absolute inset-y-0 left-14 flex items-center justify-center cursor-pointer">
+                <div className="absolute inset-y-0 left-5 sm:left-14 flex items-center justify-center cursor-pointer">
                     {leftElement}
                 </div>
             )}
             {withRightElement && (
-                <div className="absolute inset-y-0 flex items-center justify-center right-16 cursor-pointer">
+                <div className="absolute inset-y-0 flex items-center justify-center right-8 sm:right-16 cursor-pointer">
                     {rightElement}
                 </div>
             )}
@@ -41,7 +41,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 name={name}
                 id={name}
                 onChange={valueChange}
-                className={`w-[95%] focus:border-blue-500 pl-24 md:px-16 py-2 rounded-full border-2 border-white outline-none bg-dark-400 text-white placeholder-white ${className}`}
+                className={`w-[95%] focus:border-blue-500 px-14 py-2 rounded-full border-2 border-white outline-none bg-dark-400 text-white placeholder-white ${className}`}
             />
         </div>
     );

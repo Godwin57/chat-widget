@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { CardViewProps, CardViewProps } from "../types/component-types";
+import { CardViewProps } from "../types/component-types";
 
-// Would use this to display modals and side bar(s)
+// Would use this to display modals and sidebar(s)
 
 // Add a property that indicates whether the modal should close on click of the window screen
 const Modal: FC<CardViewProps> = ({
