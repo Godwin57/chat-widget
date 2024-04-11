@@ -26,6 +26,7 @@ function App() {
                 emojiPickerRef?.current &&
                 !emojiPickerRef.current.contains(event.target)
             ) {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 setShowEmojis((prevState) => false);
             }
         };
@@ -38,7 +39,7 @@ function App() {
     return (
         <div className="bg-dark-400 text-white min-h-screen">
             <Header />
-            <div className="max-h-[75vh] overflow-y-auto overflow-x-hidden sm:max-h-(80vh)">
+            <div className="max-h-[75vh] overflow-y-auto overflow-x-hidden sm:max-h-(80vh) messageScrollbar">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((elem, index) => (
                     <MessageCard
                         key={index}
@@ -78,8 +79,6 @@ function App() {
                     name="Chat-box"
                     fixedAtBottom
                 />
-
-                {/* <p className="font-bold text-xl">{message}</p> */}
             </div>
         </div>
     );

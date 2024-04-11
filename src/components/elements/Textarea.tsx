@@ -41,7 +41,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 name={name}
                 id={name}
                 onChange={valueChange}
-                className={`w-[95%] focus:border-blue-500 px-14 py-2 rounded-full border-2 border-white outline-none bg-dark-400 text-white placeholder-white ${className}`}
+                className={`w-[95%] focus:border-blue-500 py-2 rounded-full border-2 border-white px-20 outline-none bg-dark-400 text-white placeholder-white ${className}`}
             />
         </div>
     );
@@ -52,5 +52,4 @@ export default TextArea;
 /* Error
 Message not sent
     An icon would be displayed in the case of this particular error
-
 */

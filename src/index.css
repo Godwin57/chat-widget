@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.messageScrollbar::-webkit-scrollbar {
+    width: 15px;
+}
+
+.messageScrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.messageScrollbar::-webkit-scrollbar-thumb {
+    background: #858ead;
+    border-radius: 20px;
+    border: 3px solid transparent;
+}
