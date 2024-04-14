@@ -1,4 +1,9 @@
-import React, { ChangeEvent, FocusEvent } from "react";
+import React, {
+    ButtonHTMLAttributes,
+    ChangeEvent,
+    DetailedHTMLProps,
+    MouseEventHandler,
+} from "react";
 
 export interface HeaderType {
     title?: string;
@@ -13,7 +18,6 @@ export interface TextAreaProps {
     value?: string;
     placeholder?: string;
     valueChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-    onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
     className?: string;
     disabled?: boolean;
     withLeftElement?: boolean;
@@ -29,6 +33,7 @@ export interface MessageCardProps {
     message?: string;
     className?: string;
     sender?: boolean;
+    senderName?: string;
 }
 
 export interface CardViewProps {
@@ -42,4 +47,27 @@ export interface CardViewProps {
     closeOnWindowClick?: boolean;
     modalWidth?: string;
     positionClass?: string;
+}
+
+export interface InputProps {
+    error?: string;
+    name?: string;
+    value?: string;
+    type?: string;
+    placeholder?: string;
+    valueChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
+    disabled?: boolean;
+    label?: string;
+    withLabel?: boolean;
+    width?: string;
+    labelStyles?: string;
+}
+
+export interface ButtonProps {
+    name?: string;
+    type?: "button" | "submit";
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    className?: string;
+    width?: string;
 }

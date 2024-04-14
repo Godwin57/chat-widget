@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        Roboto: ['Roboto-Normal', 'sans-serif']
+      },
       spacing: {
         95: '95%'
       },

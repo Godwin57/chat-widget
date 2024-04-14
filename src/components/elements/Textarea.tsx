@@ -6,7 +6,6 @@ const TextArea: React.FC<TextAreaProps> = ({
     placeholder,
     type = "text",
     valueChange,
-    onFocus,
     className = "",
     disabled = false,
     withLeftElement,

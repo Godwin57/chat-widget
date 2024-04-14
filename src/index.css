@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: "Roboto-Italic";
+        src: url("../src/Assets/Fonts/RobotoCondensed-Italic-VariableFont_wght.ttf");
+    }
+
+    @font-face {
+        font-family: "Roboto-Normal";
+        src: url("../src/Assets/Fonts/RobotoCondensed-Italic-VariableFont_wght.ttf");
+    }
+}
+
 .messageScrollbar::-webkit-scrollbar {
     width: 15px;
 }
