@@ -5,17 +5,35 @@ import { BsSendFill } from "react-icons/bs";
 import MessageCard from "../components/Message-card";
 import { useEffect, useRef, useState } from "react";
 import EmojiPicker from "@emoji-mart/react";
-import { useAuth } from "../Context/AuthContext";
 import io from "socket.io-client";
+import useCookie from "../Hooks/useCookie";
 
 function ChatSection() {
-    const [message, setMessage] = useState("");
     const [showEmojis, setShowEmojis] = useState(false);
-    const { email } = useAuth();
+    const [email] = useCookie("userEmail");
     const emojiPickerRef = useRef(null);
 
+    const [messageObj, setMessageObj] = useState({
+        message: "",
+        date: new Date(),
+        sender: email,
+    });
+
+    const onMessageSubmit = (e) => {
+        e.preventDefault();
+
+        setMessageObj({
+            message: "",
+            date: new Date(),
+            sender: email,
+        });
+    };
+
     const handleEmojiSelect = (emo: any) => {
-        setMessage((prevMessage) => prevMessage + emo.native);
+        setMessageObj({
+            ...messageObj,
+            message: `${messageObj.message + emo.native}`,
+        });
     };
 
     const handleEmojisDisplay = (event) => {
@@ -39,24 +57,24 @@ function ChatSection() {
         return () => window.removeEventListener("click", handleEmojisDisplay);
     }, [showEmojis]);
 
-    useEffect(() => {
-        // Connect to the WebSocket server
-        const socket = io("ws://your-websocket-server-url");
+    // useEffect(() => {
+    //     // Connect to the WebSocket server
+    //     const socket = io("");
 
-        // Event listeners
-        socket.on("connect", () => {
-            console.log("Connected to WebSocket server");
-        });
+    //     // Event listeners
+    //     socket.on("connect", () => {
+    //         console.log("Connected to WebSocket server");
+    //     });
 
-        socket.on("disconnect", () => {
-            console.log("Disconnected from WebSocket server");
-        });
+    //     socket.on("disconnect", () => {
+    //         console.log("Disconnected from WebSocket server");
+    //     });
 
-        // Cleanup on unmount
-        return () => {
-            socket.disconnect();
-        };
-    }, []);
+    //     // Cleanup on unmount
+    //     return () => {
+    //         socket.disconnect();
+    //     };
+    // }, []);
 
     return (
         <div className="bg-dark-400 text-white min-h-screen">
@@ -82,14 +100,19 @@ function ChatSection() {
                     <EmojiPicker onEmojiSelect={handleEmojiSelect} />
                 </div>
                 <TextArea
-                    valueChange={(e) => setMessage(e.target.value)}
+                    valueChange={(e) =>
+                        setMessageObj({
+                            ...messageObj,
+                            message: e.target.value,
+                        })
+                    }
                     placeholder="Enter your message here"
-                    value={message}
+                    value={messageObj.message}
                     withRightElement
                     rightElement={
                         <BsSendFill
                             className="w-8 h-8 text-blue-400 hover:text-blue-700"
-                            onClick={() => console.log("Send clicked")}
+                            onClick={onMessageSubmit}
                         />
                     }
                     withLeftElement
